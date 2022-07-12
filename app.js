@@ -13,7 +13,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
-// app.use("/api/url/", )
+const urlRoute = require("./routers/url");
+app.use("/api/url/",urlRoute);
 
 const server = app.listen(process.env.PORT || 8800, async() => {
   try{
